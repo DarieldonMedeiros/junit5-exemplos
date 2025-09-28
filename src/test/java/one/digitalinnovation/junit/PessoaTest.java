@@ -1,13 +1,19 @@
 package one.digitalinnovation.junit;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 public class PessoaTest {
+
+
+    @Test
+    void deveCalcularIdadeCorretamente(){
+        Pessoa jessica = new Pessoa("Jéssica", LocalDateTime.of(2000, 1, 1, 15, 0, 0));
+        Assertions.assertEquals(25, jessica.getIdade());
+    }
 
     @Test
     void deveRetornarSeEhMaiorDeIdade(){
@@ -25,9 +31,4 @@ public class PessoaTest {
         );
     }
 
-    @Test
-    @Disabled("Teste ainda não implementado")
-    void deveRetornarIdade(){
-
-    }
 }
